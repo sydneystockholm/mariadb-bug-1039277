@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <zdb.h>
 
-#define TEST_THREADS 8
+#define TEST_THREADS 32
 
 //Note: need to CREATE DATABASE test_db
 
