@@ -1,0 +1,3 @@
+Test case to reproduce bug 1039277. You will need libzdb in order to compile this.
+
+See https://bugs.launchpad.net/maria/+bug/1039277 for more info.
