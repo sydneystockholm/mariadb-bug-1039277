@@ -4,10 +4,6 @@ void *test_thread_fn(void *arg) {
     struct test_thread *thread = arg;
     Connection_T connection = ConnectionPool_getConnection(thread->pool);
     PreparedStatement_T statement = Connection_prepareStatement(connection, TEST_SQL_SELECT);
-    PreparedStatement_setInt(statement, 1, 1);
-    PreparedStatement_setInt(statement, 2, 2);
-    PreparedStatement_setInt(statement, 3, 3);
-    PreparedStatement_setInt(statement, 4, 4);
     ResultSet_T result = PreparedStatement_executeQuery(statement);
     while (ResultSet_next(result))
         ;
@@ -21,9 +17,6 @@ int main(int argc, char **argv) {
     URL_T url = URL_new(TEST_DB_URL);
     ConnectionPool_T pool = ConnectionPool_new(url);
     ConnectionPool_start(pool);
-    Connection_T connection = ConnectionPool_getConnection(pool);
-    Connection_execute(connection, TEST_SQL_CREATE);
-    Connection_close(connection);
     for (int i = 0; i < TEST_THREADS; i++) {
         printf("Spawning thread %d\n", i);
         threads[i].id = i;
