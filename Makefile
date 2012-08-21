@@ -1,6 +1,6 @@
 ZDBPATH=`pkg-config --variable=includedir zdb`
-CFLAGS+=-g -pthread -I$(ZDBPATH)/zdb
-LDFLAGS=-lzdb
+CFLAGS+=-std=c99 -Wall -g -pthread -I$(ZDBPATH)/zdb
+LDFLAGS+=-lzdb
 
 run: build
 	@./test
