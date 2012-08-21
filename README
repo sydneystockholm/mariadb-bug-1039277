@@ -1,3 +1,4 @@
 Test case to reproduce bug 1039277. You will need libzdb in order to compile this.
+Make sure query cache is enabled as well.
 
 See https://bugs.launchpad.net/maria/+bug/1039277 for more info.
