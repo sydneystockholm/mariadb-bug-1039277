@@ -24,6 +24,6 @@
 struct test_thread {
     int id;
     pthread_t thread;
-    ConnectionPool_T pool;
+    Connection_T connection;
 };
 
